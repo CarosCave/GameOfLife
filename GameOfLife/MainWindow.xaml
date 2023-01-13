@@ -5,11 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameOfLife"
         mc:Ignorable="d"
-        Title="Conways Game of Life" Height="1000" Width="1000"
-        MinWidth="1000" MinHeight="1000"
+        Title="Conways Game of Life"
+        Width="1050" Height="1000"
+        MinWidth="1050" MinHeight="1000"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Start"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0"
+                Content="Start"
+                FontSize="18"
                 x:Name="BtnStartStop"
                 Click="BtnStartStop_OnClick_OnClick"
                 Width="80" 
@@ -17,13 +24,12 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="20,20"/>
-        <Canvas Margin="120,10,10,10"
+        <Canvas Grid.Column="1"
+                Margin="10"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 Width="870"
-                MinWidth="870"
-                Height="980"
-                MinHeight="980"
+                Height="900"
                 x:Name="PlotArea"
                 Background="LightGray"/>
     </Grid>
