@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:GameOfLife"
         mc:Ignorable="d"
         Title="Conways Game of Life"
-        Width="1050" Height="1000"
-        MinWidth="1050" MinHeight="1000"
+        Width="1020" Height="950"
+        MinWidth="1020" MinHeight="950"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,7 +18,7 @@
                 Content="Start"
                 FontSize="18"
                 x:Name="BtnStartStop"
-                Click="BtnStartStop_OnClick_OnClick"
+                Click="BtnStartStop_OnClick"
                 Width="80" 
                 Height="30"
                 HorizontalAlignment="Left"

@@ -39,7 +39,7 @@ namespace GameOfLife
             //Cell cell = new Cell(0, 0, PlotArea);
         }
 
-        private void BtnStartStop_OnClick_OnClick(object sender, RoutedEventArgs e)
+        private void BtnStartStop_OnClick(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
         }
