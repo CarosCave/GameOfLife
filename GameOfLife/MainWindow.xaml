@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:GameOfLife"
         mc:Ignorable="d"
         Title="Conways Game of Life"
-        Width="1020" Height="950"
-        MinWidth="1020" MinHeight="950"
+        Width="1020" Height="920"
+        MinWidth="1020" MinHeight="920"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -29,7 +29,7 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 Width="870"
-                Height="900"
+                Height="870"
                 x:Name="PlotArea"
                 Background="LightGray"/>
     </Grid>

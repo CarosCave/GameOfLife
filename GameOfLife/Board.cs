@@ -12,7 +12,7 @@ public class Board
     private double distanceX;
     private double distanceY;
 
-    public State InitCell()
+    private State InitCell()
     {
         Random rnd = new Random(Guid.NewGuid().GetHashCode());
         State state = (rnd.Next(0, 2) == 1) ? State.alive : State.dead;
@@ -41,6 +41,12 @@ public class Board
                 
             }
         }
+    }
+
+    public void SearchNeigbour()
+    {
+        //TODO: Count all neighbours 
+        // First lines neighbour are also the last line (periodic continuation)
     }
     
 }

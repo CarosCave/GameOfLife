@@ -32,16 +32,10 @@ namespace GameOfLife
             
         }
 
-        private void BtnInit_OnClick(object sender, RoutedEventArgs e)
-        {
-            //Board board = new Board(PlotArea);
-            
-            //Cell cell = new Cell(0, 0, PlotArea);
-        }
-
+       
         private void BtnStartStop_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
