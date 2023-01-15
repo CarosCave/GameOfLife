@@ -8,7 +8,7 @@ using Rectangle = System.Windows.Shapes.Rectangle;
 
 namespace GameOfLife;
 
-public enum State
+public enum Status
 {
     dead, // Brushes.aqua
     alive // Brushes.coral
@@ -18,49 +18,45 @@ public class Cell
 {
     private double width;
     private double height;
-    public State state { get; set; }
+    public Status Status { get; set; }
 
-    public double posX { get; private set; }
-    public double posY { get; private set; }
-
-    private Rectangle shape;
+    public double PosX { get; private set; }
+    public double PosY { get; private set; }
     
+    public int Neighbour { get; set; }
+
+    private Rectangle _shape;
     
     // Constructor
-    public Cell(double posX, double posY, State state, Canvas cv)
+    public Cell(double posX, double posY, Status status, Canvas cv)
     {
-        this.posX = posX;
-        this.posY = posY;
-        this.state = state;
+        this.PosX = posX;
+        this.PosY = posY;
+        this.Status = status;
         this.width = cv.ActualWidth / Constants.ValueRows - 2.0;
         this.height = cv.ActualHeight / Constants.ValueColumn - 2.0;
 
-        shape = new Rectangle();
-        //shape.Fill = Brushes.Aqua;
-        setBrush(state);
-        shape.Width = this.width;
-        shape.Height = this.height;
+        _shape = new Rectangle();
+        setBrush(status);
+        _shape.Width = this.width;
+        _shape.Height = this.height;
 
-        cv.Children.Add(shape);
-        Canvas.SetTop(shape,posY);
-        Canvas.SetLeft(shape, posX);
+        cv.Children.Add(_shape);
+        Canvas.SetTop(_shape,posY);
+        Canvas.SetLeft(_shape, posX);
 
-        shape.MouseDown += ShapeOnMouseDown;
-        
+        _shape.MouseDown += ShapeOnMouseDown;
     }
-
-    private void setBrush(State state)
+    
+    private void setBrush(Status status)
     {
-        shape.Fill = (state == State.alive) ? Brushes.Coral : Brushes.Aqua;
+        _shape.Fill = (status == Status.alive) ? Brushes.Coral : Brushes.Aqua;
     }
     
 
     public void ShapeOnMouseDown(object sender, MouseButtonEventArgs e)
     {
-        state = (state == State.alive) ? State.dead : State.alive;
-        setBrush(state);
+        Status = (Status == Status.alive) ? Status.dead : Status.alive;
+        setBrush(Status);
     }
-
-    
-
 }
