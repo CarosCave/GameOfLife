@@ -31,6 +31,7 @@
                 Width="870"
                 Height="870"
                 x:Name="PlotArea"
-                Background="LightGray"/>
+                Background="LightGray"
+                />
     </Grid>
 </Window>

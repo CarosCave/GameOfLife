@@ -19,7 +19,6 @@ public class Board
         return status;
     }
     
-    
     public Board(Canvas plotArea)
     {
         distanceX = plotArea.ActualWidth / Constants.ValueColumn;
@@ -98,21 +97,15 @@ public class Board
         {
             for (int iColums = 0; iColums < Constants.ValueColumn; iColums++)
             {
-                if (cells[iColums, iRows].Status == Status.alive && (
-                        cells[iColums, iRows].Neighbour < 2 || cells[iColums, iRows].Neighbour > 3))
+                if (cells[iColums, iRows].Neighbour < 2 || cells[iColums, iRows].Neighbour > 3)
                 {
                     cells[iColums, iRows].Status = Status.dead;
                 }
-                else if (cells[iColums, iRows].Status == Status.dead && cells[iColums, iRows].Neighbour == 3)
+                else if (cells[iColums, iRows].Neighbour == 3)
                 {
                     cells[iColums, iRows].Status = Status.alive;
                 }
             }
         }
-    }
-
-    public void ReDraw(Canvas cv)
-    {
-        
     }
 }

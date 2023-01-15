@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Windows.Controls;
@@ -18,7 +20,20 @@ public class Cell
 {
     private double width;
     private double height;
-    public Status Status { get; set; }
+    private Status _status;
+
+    public Status Status
+    {
+        get => _status;
+        set
+        {
+            if (_status != value)
+            {
+                _status = value;
+                setBrush(_status);
+            }
+        }
+    }
 
     public double PosX { get; private set; }
     public double PosY { get; private set; }
@@ -50,13 +65,17 @@ public class Cell
     
     private void setBrush(Status status)
     {
-        _shape.Fill = (status == Status.alive) ? Brushes.Coral : Brushes.Aqua;
+        if (_shape != null)
+        {
+            _shape.Fill = (status == Status.alive) ? Brushes.Coral : Brushes.Aqua;
+        }
+        
     }
     
-
     public void ShapeOnMouseDown(object sender, MouseButtonEventArgs e)
     {
-        Status = (Status == Status.alive) ? Status.dead : Status.alive;
+        _status = (_status == Status.alive) ? Status.dead : Status.alive;
         setBrush(Status);
     }
+    
 }
