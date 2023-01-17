@@ -14,16 +14,20 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0"
-                Content="Start"
-                FontSize="18"
-                x:Name="BtnStartStop"
-                Click="BtnStartStop_OnClick"
-                Width="80" 
-                Height="30"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="20,20"/>
+        <StackPanel Grid.Column="0">
+            <Button Content="Start"
+                    FontSize="18"
+                    x:Name="BtnStartStop"
+                    Click="BtnStartStop_OnClick"
+                    Width="80" 
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20,20"/>
+            <Label Content="Cells with 3 Neighbours" />
+            <TextBlock x:Name="TbNeighbours" />
+        </StackPanel>
+       
         <Canvas Grid.Column="1"
                 Margin="10"
                 VerticalAlignment="Top"

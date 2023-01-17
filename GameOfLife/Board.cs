@@ -15,8 +15,9 @@ public class Board
     private Status InitCell()
     {
         Random rnd = new Random(Guid.NewGuid().GetHashCode());
-        Status status = (rnd.Next(0, 2) == 1) ? Status.alive : Status.dead;
-        return status;
+        //Status status = (rnd.Next(0, 2) == 1) ? Status.alive : Status.dead;
+        //return status;
+        return Status.dead;
     }
     
     public Board(Canvas plotArea)
@@ -89,6 +90,11 @@ public class Board
             }
         }
 
+    }
+
+    public void ThreeNeighbours()
+    {
+        cells.ne
     }
 
     public void GiveBirthOrDeath()
